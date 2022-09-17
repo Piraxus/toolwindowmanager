@@ -18,8 +18,7 @@ ToolWindowManagerWrapper.h
 set(MOC_SOURCES
     ${HEADERS})
 
-find_package(Qt5Core)
-find_package(Qt5Widgets)
+find_package(Qt5 COMPONENTS Core Gui Widgets REQUIRED)
 
 qt5_wrap_cpp(OUT_MOC_FILES ${MOC_SOURCES})
 
@@ -28,3 +27,5 @@ target_include_directories(toolwindowmanager
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(toolwindowmanager 
     Qt5::Core Qt5::Gui Qt5::Widgets)
+	
+install(TARGETS toolwindowmanager)

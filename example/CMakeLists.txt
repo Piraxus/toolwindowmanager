@@ -13,8 +13,7 @@ set(MOC_SOURCES
 set(UI_FILES
     MainWindow.ui)
 
-find_package(Qt5Core)
-find_package(Qt5Widgets)
+find_package(Qt5 COMPONENTS Core Gui Widgets WinExtras REQUIRED)
 
 qt5_wrap_ui(OUT_UI_FILES ${UI_FILES})
 qt5_wrap_cpp(OUT_MOC_FILES ${MOC_SOURCES})
